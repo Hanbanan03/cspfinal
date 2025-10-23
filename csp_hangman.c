@@ -3,6 +3,70 @@
 #include <time.h>
 #include <stdlib.h>
 
+void displayHangman(int wrong) {
+    if (wrong == 0) {
+        printf("\n  _______\n");
+        printf(" |      |\n");
+        printf(" |\n");
+        printf(" |\n");
+        printf(" |\n");
+        printf(" |\n");
+        printf("_|_\n");
+    } 
+    else if (wrong == 1) {
+        printf("\n  _______\n");
+        printf(" |      |\n");
+        printf(" |      O\n");
+        printf(" |\n");
+        printf(" |\n");
+        printf(" |\n");
+        printf("_|_\n");
+    }
+    else if (wrong == 2) {
+        printf("\n  _______\n");
+        printf(" |      |\n");
+        printf(" |      O\n");
+        printf(" |      |\n");
+        printf(" |\n");
+        printf(" |\n");
+        printf("_|_\n");
+    }
+    else if (wrong == 3) {
+        printf("\n  _______\n");
+        printf(" |      |\n");
+        printf(" |      O\n");
+        printf(" |     /|\n");
+        printf(" |\n");
+        printf(" |\n");
+        printf("_|_\n");
+    }
+    else if (wrong == 4) {
+        printf("\n  _______\n");
+        printf(" |      |\n");
+        printf(" |      O\n");
+        printf(" |     /|\\\n");
+        printf(" |\n");
+        printf(" |\n");
+        printf("_|_\n");
+    }
+    else if (wrong == 5) {
+        printf("\n  _______\n");
+        printf(" |      |\n");
+        printf(" |      O\n");
+        printf(" |     /|\\\n");
+        printf(" |     /\n");
+        printf(" |\n");
+        printf("_|_\n");
+    }
+    else if (wrong == 6) {
+        printf("\n  _______\n");
+        printf(" |      |\n");
+        printf(" |      O\n");
+        printf(" |     /|\\\n");
+        printf(" |     / \\\n");
+        printf(" |\n");
+        printf("_|_   GAME OVER!\n");
+    }
 //Archie  
 //introduction to game
 
@@ -31,7 +95,20 @@ int main(void){
     int num = rand() % 23;
     char chosen_word[] = words[num];// can anyone thcing else for the list that are not people in this grope or part of decay
 
-//
+    // Hannah
+    char board[20];
+char wrongLetters[20];
+int wrongCount = 0;
+
+    for (int i = 0; i < strlen(chosen_word); i++) {
+    board[i] = '_';
+}
+board[strlen(chosen_word)] = '\0';
+wrongLetters[0] = '\0'; // starts empty
+
+printf("\nWord: %s\n", board);
+printf("Wrong guesses: %s\n", wrongLetters);//
+    
     if (victory == yes){//what is the condishion for this comdishional and where is the else statment I only see a if and an else if statment no else statment.
         printf("congrats you guessed the word correctly!\n");
     }else if (victory == no){
